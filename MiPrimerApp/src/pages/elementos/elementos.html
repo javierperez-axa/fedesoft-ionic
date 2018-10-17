@@ -15,4 +15,11 @@
 
 <ion-content padding>
   <button ion-button full (click)="presentActionSheet()" >Mostrar ActionSheets</button>
+  <ion-list>
+    <button ion-item *ngFor="let item of items"
+    (click)="itemSelected(item)">
+    {{ item }}
+    </button>  
+    </ion-list>
+    
 </ion-content>
