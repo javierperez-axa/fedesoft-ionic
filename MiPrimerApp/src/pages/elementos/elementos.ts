@@ -73,4 +73,14 @@ export class ElementosPage {
     'Halo'
 ];
 
+itemSelected(juego) {
+  const alert = this.alertCtrl.create({
+    title: juego,
+    subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!', 
+    buttons: ['OK']
+      });
+  alert.present();
+}
+
+
 }
