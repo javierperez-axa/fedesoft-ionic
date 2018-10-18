@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ActionSheetController, AlertController } from 'ionic-angular';
+import { UserServiceProvider } from '../../providers/user-service/user-service';
 
 /**
  * Generated class for the ElementosPage page.
@@ -13,18 +14,29 @@ import { NavController, NavParams, ActionSheetController, AlertController } from
   templateUrl: 'elementos.html',
 })
 export class ElementosPage {
-
+  users=[];
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public actionSheetCtrl: ActionSheetController,
-    public alertCtrl: AlertController
+    public alertCtrl: AlertController,
+    public userService: UserServiceProvider
+
     ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ElementosPage');
+  ionViewDidLoad(){
+    this.userService.getUsers()
+    .subscribe(
+      (data) => { // Success
+        this.users = data['results'];
+      },
+      (error) =>{
+        console.error(error);
+      }
+    )
   }
+
 
   presentActionSheet() {
     const actionSheet = this.actionSheetCtrl.create({
