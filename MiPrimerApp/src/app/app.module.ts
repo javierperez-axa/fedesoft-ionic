@@ -13,6 +13,8 @@ import { LoginPage } from '../pages/login/login';
 import { ElementosPage } from '../pages/elementos/elementos';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SliderPage } from '../pages/slider/slider';
+import { HttpClientModule } from '@angular/common/http;
+import { UserServiceProvider } from '../providers/user-service/user-service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { SliderPage } from '../pages/slider/slider';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UserServiceProvider
   ]
 })
 export class AppModule {}
