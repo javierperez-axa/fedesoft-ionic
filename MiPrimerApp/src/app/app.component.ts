@@ -20,7 +20,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = SliderPage;
+  rootPage = HelloIonicPage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
