@@ -13,7 +13,7 @@ import { LoginPage } from '../pages/login/login';
 import { ElementosPage } from '../pages/elementos/elementos';
 import { TabsPage } from '../pages/tabs/tabs';
 import { SliderPage } from '../pages/slider/slider';
-import { HttpClientModule } from '@angular/common/http;
+import { HttpClientModule } from '@angular/common/http';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 
 @NgModule({
@@ -29,6 +29,7 @@ import { UserServiceProvider } from '../providers/user-service/user-service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
